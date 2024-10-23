@@ -8,8 +8,16 @@
   <form method="post">
     <label for="username">Username</label>
     <input name="username" id="username" required>
+    
     <label for="password">Password</label>
     <input type="password" name="password" id="password" required>
+    
+    <!-- Checkboxes para seleccionar el contenido -->
+    <label>Seleccione qué tipo de contenido desea ver:</label>
+    <input type="checkbox" name="content_selection" value="Tornillos"> Tornillos<br>
+    <input type="checkbox" name="content_selection" value="Arte"> Arte<br>
+    <input type="checkbox" name="content_selection" value="Esculturas"> Esculturas<br>
+
     <input type="submit" value="Register">
   </form>
 {% endblock %}

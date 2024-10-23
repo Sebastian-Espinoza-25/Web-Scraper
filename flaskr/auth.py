@@ -14,6 +14,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        content_selection = request.form.getlist('content_selection')  # Obtén las selecciones de contenido como una lista
         db = get_db()
         error = None
 
@@ -24,11 +25,26 @@ def register():
 
         if error is None:
             try:
+                # Insertar nuevo usuario
                 db.execute(
                     "INSERT INTO user (username, password) VALUES (?, ?)",
                     (username, generate_password_hash(password)),
                 )
                 db.commit()
+
+                # Obtener el ID del usuario recién creado
+                user_id = db.execute(
+                    'SELECT id FROM user WHERE username = ?', (username,)
+                ).fetchone()['id']
+
+                # Guardar la selección de contenido en user_content_selection
+                for selection in content_selection:
+                    db.execute(
+                        "INSERT INTO user_content_selection (user_id, content_type) VALUES (?, ?)",
+                        (user_id, selection)
+                    )
+                db.commit()
+
             except db.IntegrityError:
                 error = f"User {username} is already registered."
             else:
@@ -37,6 +53,8 @@ def register():
         flash(error)
 
     return render_template('auth/register.html')
+
+
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
