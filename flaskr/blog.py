@@ -21,10 +21,10 @@ def index():
 
         # Mostrar solo el contenido seleccionado por el usuario
         if 'Tornillos' in selected_content:
-            tornillos = db.execute('SELECT Producto, Precio FROM Tornillos').fetchall()
+            tornillos = db.execute('SELECT Producto, Precio, Vinculo FROM Tornillos').fetchall()
 
         if 'Arte' in selected_content:
-            arte = db.execute('SELECT Titulo, Precio FROM Arte').fetchall()
+            arte = db.execute('SELECT Titulo, Precio, Vinculo FROM Arte').fetchall()
 
         if 'Esculturas' in selected_content:
             esculturas = db.execute('SELECT Producto, Precio FROM Esculturas').fetchall()
@@ -35,8 +35,8 @@ def index():
         return render_template('blog/index.html', tornillos=tornillos, arte=arte, esculturas=esculturas)
 
     else:  # Si el usuario NO ha iniciado sesión, mostrar todos los datos
-        tornillos = db.execute('SELECT Producto, Precio FROM Tornillos').fetchall()
-        arte = db.execute('SELECT Titulo, Precio FROM Arte').fetchall()
+        tornillos = db.execute('SELECT Producto, Precio, Vinculo FROM Tornillos').fetchall()
+        arte = db.execute('SELECT Titulo, Precio, Vinculo FROM Arte').fetchall()
         esculturas = db.execute('SELECT Producto, Precio FROM Esculturas').fetchall()
 
         return render_template('blog/index.html', tornillos=tornillos, arte=arte, esculturas=esculturas)

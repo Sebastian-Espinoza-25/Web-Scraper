@@ -10,13 +10,46 @@
   <input type="text" id="search" placeholder="Escribe para filtrar...">
   <div class="divider"></div>
 
+  <style>
+    /* Estilos generales */
+    ul.product-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    ul.product-list li {
+      padding: 10px 0;
+      font-size: 16px;
+    }
+
+    /* Estilos para el enlace (Vinculo) */
+    a.product-link {
+      color: #007bff; /* Color azul atractivo */
+      text-decoration: none; /* Sin subrayado por defecto */
+      font-weight: bold; /* Negrita */
+    }
+
+    a.product-link:hover {
+      color: #0056b3; /* Color más oscuro cuando se pasa el mouse */
+      text-decoration: underline; /* Subrayado al pasar el mouse */
+    }
+    
+    /* Opcional: Efecto en el contenedor al pasar el ratón por encima */
+    ul.product-list li:hover {
+      background-color: #f8f9fa;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+
   {% if g.user %}
     <!-- Mostrar los datos seleccionados por el usuario -->
     {% if tornillos %}
       <h2>Tornillos</h2>
       <ul class="product-list" id="tornillos-list">
         {% for item in tornillos %}
-          <li>{{ item['Producto'] }} - ${{ item['Precio'] }}</li>
+          <li>{{ item['Producto'] }} - ${{ item['Precio'] }} - 
+              <a href="{{ item['Vinculo'] }}" class="product-link" target="_blank">{{ item['Vinculo'] }}</a>
+          </li>
         {% endfor %}
       </ul>
     {% endif %}
@@ -25,7 +58,9 @@
       <h2>Arte</h2>
       <ul class="product-list" id="arte-list">
         {% for item in arte %}
-          <li>{{ item['Titulo'] }} - ${{ item['Precio'] }}</li>
+          <li>{{ item['Titulo'] }} - ${{ item['Precio'] }} - 
+              <a href="{{ item['Vinculo'] }}" class="product-link" target="_blank">{{ item['Vinculo'] }}</a>
+          </li>
         {% endfor %}
       </ul>
     {% endif %}
@@ -44,14 +79,18 @@
     <h2>Tornillos</h2>
     <ul class="product-list" id="tornillos-list">
       {% for item in tornillos %}
-        <li>{{ item['Producto'] }} - ${{ item['Precio'] }}</li>
+        <li>{{ item['Producto'] }} - ${{ item['Precio'] }} - 
+            <a href="{{ item['Vinculo'] }}" class="product-link" target="_blank">{{ item['Vinculo'] }}</a>
+        </li>
       {% endfor %}
     </ul>
 
     <h2>Arte</h2>
     <ul class="product-list" id="arte-list">
       {% for item in arte %}
-        <li>{{ item['Titulo'] }} - ${{ item['Precio'] }}</li>
+        <li>{{ item['Titulo'] }} - ${{ item['Precio'] }} - 
+            <a href="{{ item['Vinculo'] }}" class="product-link" target="_blank">{{ item['Vinculo'] }}</a>
+        </li>
       {% endfor %}
     </ul>
 
@@ -62,24 +101,23 @@
       {% endfor %}
     </ul>
   {% endif %}
+  
   <script>
     // filtro en vivo
     document.getElementById('search').addEventListener('input', function() {
       var filter = this.value.toLowerCase();
-    // Filtro tornillos
-    document.querySelectorAll('#tornillos-list li').forEach(function(item) {
-      item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      // Filtro tornillos
+      document.querySelectorAll('#tornillos-list li').forEach(function(item) {
+        item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
       });
-    // Filtro arte
-    document.querySelectorAll('#arte-list li').forEach(function(item) {
-      item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      // Filtro arte
+      document.querySelectorAll('#arte-list li').forEach(function(item) {
+        item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
       });
-    // Filtrar esculturas
-    document.querySelectorAll('#esculturas-list li').forEach(function(item) {
-      item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      // Filtrar esculturas
+      document.querySelectorAll('#esculturas-list li').forEach(function(item) {
+        item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
       });
     });
   </script>
 {% endblock %}
-
-
