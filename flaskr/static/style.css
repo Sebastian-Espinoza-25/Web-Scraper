@@ -1,180 +1,215 @@
 /* Reset de estilos básicos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Estilo global */
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(110deg, #2a9d8f, #ffffff);
-    color: #333;
-    padding: 20px;
-  }
-  
-  /* Estilo del contenedor principal */
-  .content {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-  
-  /* Navegación */
-  nav {
-    background-color: #2a9d8f;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav h1 {
-    color: #fff;
-    font-size: 1.8em;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav ul li {
-    margin: 0;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 10px 20px;
-    background-color: #264653;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background-color: #1d3557;
-  }
-  
-  /* Cabeceras */
-  h1, h2 {
-    color: #2a9d8f;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-weight: 500;
-  }
-  
-  /* Formularios */
-  form {
-    margin-top: 20px;
-  }
-  
-  form label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #264653;
-  }
-  
-  form input[type="text"],
-  form input[type="password"],
-  form input[type="checkbox"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-  }
-  
-  form input[type="text"]:focus,
-  form input[type="password"]:focus {
-    border-color: #2a9d8f;
-    outline: none;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(42, 157, 143, 0.2);
-  }
-  
-  /* Estilo de los checkboxes */
-  form input[type="checkbox"] {
-    width: auto;
-    margin-right: 10px;
-  }
-  
-  /* Botón de registro */
-  form input[type="submit"] {
-    background-color: #2a9d8f;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-  }
-  
-  form input[type="submit"]:hover {
-    background-color: #1d3557;
-  }
-  
-  /* Listas de productos */
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  ul li {
-    background: #f1f1f1;
-    margin: 10px 0;
-    padding: 15px;
-    border-left: 5px solid #2a9d8f;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  ul li:nth-child(even) {
-    background: #e9f5f3;
-  }
-  
-  ul li span {
-    font-weight: bold;
-    color: #264653;
-  }
-  
-  /* Mensajes flash */
-  .flash {
-    background-color: #f4a742;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  /* Botón para cerrar sesión */
-  .logout-btn {
-    background-color: #e63946;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .logout-btn:hover {
-    background-color: #d62828;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Estilo del contenedor principal */
+.content {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+/* Navegación */
+nav {
+  background-color: #6c5ce7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  color: #fff;
+  font-size: 2em;
+  letter-spacing: 1.5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background-color: #09b0e3;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #74b9ff;
+}
+
+/* Cabeceras */
+h1, h2 {
+  color: #6c5ce7;
+  border-bottom: 2px solid #dfe6e9;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Formularios */
+form {
+  margin-top: 25px;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 8px;
+  font-weight: bold;
+  color: #2d3436;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="checkbox"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #dfe6e9;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+input#username {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #dfe6e9;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+input#search {
+  width: 40%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #dfe6e9;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border-color: #6c5ce7;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(108, 92, 231, 0.3);
+}
+
+/* Estilo de los checkboxes */
+form input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Botón de registro */
+form input[type="submit"] {
+  background-color: #6c5ce7;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #a29bfe;
+}
+
+/* Listas de productos */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: #f9f9f9;
+  margin: 15px 0;
+  padding: 20px;
+  border-left: 5px solid #6c5ce7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li:nth-child(even) {
+  background: #dfe6e9;
+}
+
+ul li span {
+  font-weight: bold;
+  color: #2d3436;
+}
+
+/* Mensajes flash */
+.flash {
+  background-color: #fdcb6e;
+  color: #2d3436;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Estilo para los enlaces de "Tornillos", "Arte", "Esculturas" */
+nav ul li a.Accesos {
+  color: #6c5ce7;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 5px 40px;
+  background-color: #d8d8d8;
+  border-radius: 8px;
+  border: none; 
+  box-shadow: none; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+}
+
+nav ul li a.Accesos:hover {
+  background-color: #a29bfe;
+  color: #fff;
+}
+
+/* Ajuste del espaciado entre los enlaces */
+nav ul li {
+  margin: 0 10px; 
+}
+

@@ -30,7 +30,7 @@ def init_db_command():
 @click.command('scrape-data')
 def scrape_data_command():
     """Scrapes data from three websites and saves to the database."""
-    # Importar scrapers dentro de la función para evitar el ciclo de importación
+    # Importar scrapers dentro de la función
     from flaskr.scrapers import ScrappingPani, ScrappingSebas, ScrappingLuis
 
     click.echo('Starting scraping process...')

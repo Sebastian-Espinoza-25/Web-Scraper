@@ -28,7 +28,6 @@ CREATE TABLE Esculturas (
   Precio TEXT NOT NULL
 );
 
--- Nueva tabla para almacenar las selecciones de contenido de los usuarios
 CREATE TABLE user_content_selection (
   user_id INTEGER,
   content_type TEXT NOT NULL,

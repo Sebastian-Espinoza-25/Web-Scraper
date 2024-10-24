@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Productos Variados{% endblock %}</h1>
+  <h1>{% block title %}Productos{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
+  <!-- Input de búsqueda -->
+  <label for="search">Buscar productos:</label>
+  <input type="text" id="search" placeholder="Escribe para filtrar...">
+
   {% if g.user %}
     <!-- Mostrar los datos seleccionados por el usuario -->
     {% if tornillos %}
       <h2>Tornillos</h2>
-      <ul>
+      <ul class="product-list" id="tornillos-list">
         {% for item in tornillos %}
           <li>{{ item['Producto'] }} - ${{ item['Precio'] }}</li>
         {% endfor %}
@@ -18,7 +22,7 @@
 
     {% if arte %}
       <h2>Arte</h2>
-      <ul>
+      <ul class="product-list" id="arte-list">
         {% for item in arte %}
           <li>{{ item['Titulo'] }} - ${{ item['Precio'] }}</li>
         {% endfor %}
@@ -27,7 +31,7 @@
 
     {% if esculturas %}
       <h2>Esculturas</h2>
-      <ul>
+      <ul class="product-list" id="esculturas-list">
         {% for item in esculturas %}
           <li>{{ item['Producto'] }} - ${{ item['Precio'] }}</li>
         {% endfor %}
@@ -37,24 +41,44 @@
   {% else %}
     <!-- Mostrar todos los datos si no ha iniciado sesión -->
     <h2>Tornillos</h2>
-    <ul>
+    <ul class="product-list" id="tornillos-list">
       {% for item in tornillos %}
         <li>{{ item['Producto'] }} - ${{ item['Precio'] }}</li>
       {% endfor %}
     </ul>
 
     <h2>Arte</h2>
-    <ul>
+    <ul class="product-list" id="arte-list">
       {% for item in arte %}
         <li>{{ item['Titulo'] }} - ${{ item['Precio'] }}</li>
       {% endfor %}
     </ul>
 
     <h2>Esculturas</h2>
-    <ul>
+    <ul class="product-list" id="esculturas-list">
       {% for item in esculturas %}
         <li>{{ item['Producto'] }} - ${{ item['Precio'] }}</li>
       {% endfor %}
     </ul>
   {% endif %}
+  <script>
+    // filtro en vivo
+    document.getElementById('search').addEventListener('input', function() {
+      var filter = this.value.toLowerCase();
+    // Filtro tornillos
+    document.querySelectorAll('#tornillos-list li').forEach(function(item) {
+      item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      });
+    // Filtro arte
+    document.querySelectorAll('#arte-list li').forEach(function(item) {
+      item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      });
+    // Filtrar esculturas
+    document.querySelectorAll('#esculturas-list li').forEach(function(item) {
+      item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
 {% endblock %}
+
+
