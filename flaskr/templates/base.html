@@ -3,16 +3,17 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
   <h1>Web Scrapers</h1>
-  <ul>
+  <ul class="nav-links"> <!-- Clase específica para la navegación -->
     <li><a class="Accesos" href="https://eltornillo.com.mx/tienda-en-linea/tornillos.html" target="_blank">Tornillos</a></li>
     <li><a class="Accesos" href="https://www.todocuadros.com.mx/" target="_blank">Arte</a></li>
     <li><a class="Accesos" href="https://coleccionsergiobustamante.com.mx/en/collections/esculturas" target="_blank">Esculturas</a></li>
     {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+      <li><span>{{ g.user['username'] }}</span></li>
+      <li><a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a></li>
     {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Registro</a>
-      <li><a href="{{ url_for('auth.login') }}">Iniciar Sesión</a>
+      <li><a href="{{ url_for('auth.register') }}">Registro</a></li>
+      <li><a href="{{ url_for('auth.login') }}">Iniciar Sesión</a></li>
+
     {% endif %}
   </ul>
 </nav>
