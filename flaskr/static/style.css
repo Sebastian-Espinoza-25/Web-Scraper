@@ -206,3 +206,38 @@ ul:not(.nav-links) li .precio {
 ul:not(.nav-links) li:nth-child(even) {
   background-color: #FFF6E5;
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+input#username {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #FF6B6B;
+  margin-bottom: 20px;
+}
+
+input#password {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #FF6B6B;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #FF6B6B;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #E63946;
+}
